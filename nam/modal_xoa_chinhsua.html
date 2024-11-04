@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- ===============================================-->
+  <!--    Document Title-->
+  <!-- ===============================================-->
+  <title>Falcon | Dashboard &amp; Web App Template</title>
+
+
+  <!-- ===============================================-->
+  <!--    Favicons-->
+  <!-- ===============================================-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicons/favicon.ico">
+  <link rel="manifest" href="../assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="../assets/img/favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="../assets/js/config.js"></script>
+  <script src="../../vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+
+  <!-- ===============================================-->
+  <!--    Stylesheets-->
+  <!-- ===============================================-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="../../vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+  <link href="../assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+  <link href="../assets/css/theme.min.css" rel="stylesheet" id="style-default">
+  <link href="../assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+  <link href="../assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="../vendors/dropzone/dropzone.min.css" rel="stylesheet" />
+
+
+  <script>
+    var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+    if (isRTL) {
+      var linkDefault = document.getElementById('style-default');
+      var userLinkDefault = document.getElementById('user-style-default');
+      linkDefault.setAttribute('disabled', true);
+      userLinkDefault.setAttribute('disabled', true);
+      document.querySelector('html').setAttribute('dir', 'rtl');
+    } else {
+      var linkRTL = document.getElementById('style-rtl');
+      var userLinkRTL = document.getElementById('user-style-rtl');
+      linkRTL.setAttribute('disabled', true);
+      userLinkRTL.setAttribute('disabled', true);
+    }
+  </script>
+  
+</head>
+
+
+<body>
+
+  <!-- ===============================================-->
+  <!--    Main Content-->
+  <!-- ===============================================-->
+  <main class="main" id="top">
+    <div class="container" data-layout="container">
+        
+
+        
+   
+            
+            <!-- modal xóa -->
+            <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+                  <div class="modal-content position-relative">
+                    <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+                      <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="rounded-top-lg py-3 ps-4 pe-6 border-bottom">
+                          <h4 class="mb-1" id="modalExampleDemoLabel" >Chuyển vào thùng rác<span class="text-700 fs-3 bi-question"></span></h4>
+                      </div>
+                  </div>
+                   
+                    <div class="ps-4 pt-3 bg-light">
+                      <span>Các mục trong thùng rác sẽ tự động xóa sau 30 ngày. Bạn có thể xóa các mục này khỏi thùng rác sớm hơn bằng cách đi đến Nhật kí hoạt động trong phần Cài đặt.</span>
+                    </div>
+                    <div class="modal-footer border-top-0 bg-light">
+                      
+                      <button class="btn btn-secondary me-1 mb-1" type="button" data-bs-dismiss="modal">Hủy
+                      </button>
+                      <button class="btn btn-primary me-1 mb-1" type="button">Chuyển
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- modal chỉnh sửa -->
+              <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+                  <div class="modal-content position-relative">
+                    <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
+                      <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0 d-flex justify-content-center">
+                      <div class="rounded-top-lg py-3 ps-4 pe-6 border-bottom">
+                          <h4 class="mb-1" id="modalExampleDemoLabel" >Chỉnh sửa bài viết</h4>
+                      </div>
+                  </div>
+                  <div class="d-flex align-items-center position-relative bg-light mt-2 ms-2">
+                    <div class="avatar avatar-2xl status-online">
+                      <img class="rounded-circle" src="../assets/img/team/7.jpg" alt="" />
+
+                    </div>
+                    <div class="flex-1 ms-3">
+                      <h6 class="mb-0 fw-semi-bold"><a class="stretched-link text-900" href="pages/user/profile.html">Bui Hai Nam</a></h6>
+                      <p class="text-500 fs--2 mb-0">Đang hoạt động</p>
+                    </div>
+                  </div>
+                    <div class="ps-4 pt-3 bg-light">
+                      <span> CHÍNH THỨC KHỞI ĐỘNG CUỘC THI "THIẾT KẾ LOGO & BANNER TẾT KHOA CNTT 2024"
+                        Nhằm chuẩn bị cho các hoạt động truyền thông chào đón Tết Ất Tỵ 2025, Khoa CNTT phát động cuộc thi thiết kế Logo và Banner với mong muốn tạo sân chơi sáng tạo cho sinh viên, góp phần xây dựng bộ nhận diện thương hiệu cho Khoa trong dịp lễ lớn này. Đây là cơ hội để các bạn sinh viên thể hiện khả năng thiết kế và đóng góp vào các sự kiện quan trọng của Khoa.
+                       </span>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <input class="form-control form-control-lg" type="text" placeholder="Thêm vào bài viết của bạn" aria-label=".form-control-lg example" />
+                      </div>
+                    
+                      
+                      
+                      <button class="btn btn-primary me-1 mb-1" type="button">Lưu
+                      </button>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5">
+                <button class="btn btn-primary me-1 mb-1" type="button"  data-bs-toggle="modal" data-bs-target="#modal-edit">Chỉnh sửa</button>
+              <button class="btn btn-danger me-1 mb-1" type="button"  data-bs-toggle="modal" data-bs-target="#modal-delete">Xóa</button>
+              </div>
+              
+        
+   
+    </div>
+  </main>
+  <!-- ===============================================-->
+  <!--    End of Main Content-->
+  <!-- ===============================================-->
+
+
+  <!-- ===============================================-->
+  <!--    JavaScripts-->
+  <!-- ===============================================-->
+  
+  <script src="../vendors/popper/popper.min.js"></script>
+  <script src="../vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="../vendors/anchorjs/anchor.min.js"></script>
+  <script src="../vendors/is/is.min.js"></script>
+  <script src="../vendors/fontawesome/all.min.js"></script>
+  <script src="../vendors/lodash/lodash.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="../vendors/list.js/list.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../vendors/dropzone/dropzone.min.js"></script>
+  
+
+</body>
+
+</html>
+
