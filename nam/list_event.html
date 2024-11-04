@@ -71,56 +71,13 @@
   <main class="main" id="top">
     <div class="container" data-layout="container">
         <div class="mt-5">
-            <h3>Nhóm ban</h3>
+            <h3>Danh sách tham gia sự kiện</h3>
         </div>
 
         
     <div class="row">
         <div class="col">
-            <button class="btn btn-falcon-primary me-1 mb-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-add"><span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Thêm
-            </button>
-            <!-- modal thêm -->
-            <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
-                  <div class="modal-content position-relative">
-                    <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
-                      <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-0">
-                      <div class="rounded-top-lg py-3 ps-4 pe-6 border-bottom">
-                          <h4 class="mb-1" id="modalExampleDemoLabel" ><span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Thêm</h4>
-                      </div>
-                  </div>
-                   <div class="mb-4 col">
-                    <div class="row mt-3 ms-3">
-                        <label class="col-sm-2 col-form-label text-nowrap" for="inputPassword" >Tên nhóm ban</label>
-                  <div class="col-sm-6 ms-6">
-                    <input class="form-control" id="inputPassword" type="text" placeholder="Tên nhóm ban"/>
-                  </div>
-                    </div>
-                    <div class="row mt-3 ms-3">
-                        <label class="col-sm-2 col-form-label" for="inputPassword">Mô tả</label>
-                  <div class="col-sm-6 ms-6">
-                    <input class="form-control" id="inputPassword" type="text" placeholder="Mô tả" />
-                  </div>
-                    </div>
-                  
-                   </div>
-                  
-                    <div class="modal-footer border-top-0 bg-light">
-                      
-                      <button class="btn btn-secondary me-1 mb-1" type="button" data-bs-dismiss="modal">Hủy
-                      </button>
-                      <button class="btn btn-success me-1 mb-1" type="button">Thêm
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <button class="btn btn-falcon-default me-1 mb-1" type="button" >Chỉnh sửa
-            </button>
-            <button class="btn btn-falcon-danger me-1 mb-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-delete">Xóa
-            </button>
+            
             <!-- modal xóa -->
             <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
@@ -153,7 +110,7 @@
               <input
                 class="form-control search-input fuzzy-search"
                 type="search"
-                placeholder="Nhập tên câu lạc bộ"
+                placeholder="Tìm kiếm"
                 aria-label="Search"
               />
               <span class="input-group-text bg-white ">
@@ -170,64 +127,56 @@
             <table class="table table-sm table-striped fs--1 mb-0 overflow-hidden">
               <thead class="bg-300 text-900">
                 <tr>
-                  <th>
-                    <div class="form-check fs-0 mb-0 d-flex align-items-center">
-                        <input class="form-check-input hidden-checkbox" id="checkbox-bulk-customers-select" type="checkbox" />                    </div>
-                  </th>
-                  <th class="sort pe-1 align-middle white-space-nowrap" data-sort="stt">STT</th>
-                  <th class="sort pe-1 align-middle white-space-nowrap" data-sort="name">Tên</th>
-                  <th class="sort pe-1 align-middle white-space-nowrap" data-sort="email">Mô tả</th>
-                  
+                  <th class="sort pe-1 align-middle white-space-nowrap" data-sort="stt">MSV</th>
+                  <th class="sort pe-1 align-middle white-space-nowrap" data-sort="name">Họ Tên</th>
+                  <th class="sort pe-1 align-middle white-space-nowrap" data-sort="email">Nhóm ban</th>
+                  <th class="sort pe-1 align-middle white-space-nowrap" data-sort="email">Ghi chú</th>
                 </tr>
               </thead>
               <tbody class="list" id="table-customers-body">
                 
                <tr>
-                <td class="align-middle py-2" style="width: 28px;">
-                    <div class="form-check fs-0 mb-0 d-flex align-items-center">
-                        <input class="form-check-input hidden-checkbox" type="checkbox" id="customer-24" data-bulk-select-row="data-bulk-select-row" />                    </div>
-                  </td>
+               
                   <td class="name align-middle white-space-nowrap py-2"><a href="../../app/e-commerce/customer-details.html">
                       <div class="d-flex d-flex align-items-center">
                         <div class="flex-1">
-                          <h5 class="mb-0 fs--1">1</h5>
+                          <h5 class="mb-0 fs--1">715105159</h5>
                         </div>
                       </div>
                     </a></td>
-                  <td class="email align-middle py-2"><a>Ban hậu cần</a></td>
-                  <td class="phone align-middle white-space-nowrap py-2"><a>Mô tả về ban</a></td>
-                  
+                    <td class="email align-middle py-2 "><img class="rounded-circle avatar-xl" src="../assets/img/team/13.jpg" alt=""> <a>Bui Hai Nam</a></td>
+
+                  <td class="phone align-middle white-space-nowrap py-2"><a>Truyền Thông</a></td>
+                  <td><a href="#">Xem</a></td>
+
                </tr>
                   
                <tr>
-                <td class="align-middle py-2" style="width: 28px;">
-                    <div class="form-check fs-0 mb-0 d-flex align-items-center">
-                        <input class="form-check-input" type="checkbox" id="customer-24" data-bulk-select-row="data-bulk-select-row" />                    </div>
-                  </td>
+                
                   <td class="name align-middle white-space-nowrap py-2"><a href="../../app/e-commerce/customer-details.html">
                       <div class="d-flex d-flex align-items-center">
                         <div class="flex-1">
-                          <h5 class="mb-0 fs--1">2</h5>
+                          <h5 class="mb-0 fs--1">715105159</h5>
                         </div>
                       </div>
                     </a></td>
-                  <td class="email align-middle py-2"><a>Ban Truyền Thông</a></td>
-                  <td class="phone align-middle white-space-nowrap py-2"><a>Mô tả về ban</a></td>
+                  <td class="email align-middle py-2 "><img class="rounded-circle avatar-xl" src="../assets/img/team/13.jpg" alt=""> <a>Bui Hai Nam</a></td>
+                  <td class="phone align-middle white-space-nowrap py-2"><a>Hậu cần</a></td>
+                  <td><a href="#">Xem</a></td>
+
                </tr>
                <tr>
-                <td class="align-middle py-2" style="width: 28px;">
-                    <div class="form-check fs-0 mb-0 d-flex align-items-center">
-                        <input class="form-check-input " type="checkbox" id="customer-24" data-bulk-select-row="data-bulk-select-row" />                    </div>
-                  </td>
+                
                   <td class="name align-middle white-space-nowrap py-2"><a href="../../app/e-commerce/customer-details.html">
                       <div class="d-flex d-flex align-items-center">
                         <div class="flex-1">
-                          <h5 class="mb-0 fs--1">3</h5>
+                          <h5 class="mb-0 fs--1">715105159</h5>
                         </div>
                       </div>
                     </a></td>
-                  <td class="email align-middle py-2"><a>Ban kĩ thuật</a></td>
-                  <td class="phone align-middle white-space-nowrap py-2"><a>Mô tả về ban</a></td>
+                    <td class="email align-middle py-2 "><img class="rounded-circle avatar-xl" src="../assets/img/team/13.jpg" alt=""> <a>Bui Hai Nam</a></td>
+                  <td class="phone align-middle white-space-nowrap py-2"><a>Hậu cần</a></td>
+                  <td><a href="#">Xem</a></td>
                </tr>
                 
               </tbody>
