@@ -90,14 +90,20 @@
                 </div> -->
               </div>
             </div>
-            <div>
+            <div class="ms-4 me-4 pb-5">
                 <h5>Sự kiện mùa hè xanh 2024</h5>
-                <div class="d-flex justify-content-center mw-50" >
-                    <span>Để góp phần cho chiến dịch MHX có thể diễn ra tốt đẹp trong thời  gian tới, NTSP tổ chức chương trình gây quỹ "Hè Xanh" để khởi động cho một mùa hè đầy nhiệt huyết của sức trẻ.</span>
-                    <div class="d-flex">
-                        <span>Thời gian bắt đầu&#58;</span>
-                        <span>Thời gian kết thúc&#58;</span>
+                <div class="d-flex flex-wrap" >
+                    <div class="col-7">
+                        <span >Để góp phần cho chiến dịch MHX có thể diễn ra tốt đẹp trong thời  gian tới, NTSP tổ chức chương trình gây quỹ "Hè Xanh" để khởi động cho một mùa hè đầy nhiệt huyết của sức trẻ.</span>
                     </div>
+                    <div class="d-flex flex-column col-3 ms-8">
+                        <span>Thời gian bắt đầu&#58; 7am 2 &#8260;10 &#8260;2024</span>
+                        <span>Thời gian kết thúc&#58; 8pm 2 &#8260;10 &#8260;2024</span>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end me-6 ">
+                    <button id="joinButton" class="btn btn-falcon-info me-1 mb-1 " type="button"  onclick="toggleButton()">Tham gia
+                    </button>
                 </div>
             </div>
             <!-- nút like share comment -->
@@ -126,7 +132,18 @@
   <!-- ===============================================-->
   <!--    JavaScripts-->
   <!-- ===============================================-->
-  
+  <script>
+    function toggleButton() {
+        const button = document.getElementById('joinButton');
+        button.classList.toggle('btn-falcon-info'); // Remove the original class
+        button.classList.toggle('btn-outline-info'); // Add new class
+        if (button.classList.contains('btn-outline-info')) {
+        button.innerHTML = '<i class="text-blue fs-0 bi-check2"></i> Đã tham gia';
+    } else {
+        button.textContent = 'Tham gia';
+    }
+    }
+    </script>
   <script src="../vendors/popper/popper.min.js"></script>
   <script src="../vendors/bootstrap/bootstrap.min.js"></script>
   <script src="../vendors/anchorjs/anchor.min.js"></script>
