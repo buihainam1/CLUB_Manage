@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- ===============================================-->
+  <!--    Document Title-->
+  <!-- ===============================================-->
+  <title>Falcon | Dashboard &amp; Web App Template</title>
+
+
+  <!-- ===============================================-->
+  <!--    Favicons-->
+  <!-- ===============================================-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicons/favicon.ico">
+  <link rel="manifest" href="../assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="../assets/img/favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="../assets/js/config.js"></script>
+  <script src="../../vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+
+
+  <!-- ===============================================-->
+  <!--    Stylesheets-->
+  <!-- ===============================================-->
+  <link href="../vendors/dropzone/dropzone.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="../../vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+  <link href="../assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
+  <link href="../assets/css/theme.min.css" rel="stylesheet" id="style-default">
+  <link href="../assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
+  <link href="../assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="../vendors/flatpickr/flatpickr.min.css" rel="stylesheet" />
+
+  
+
+
+  
+</head>
+
+
+<body>
+
+  <!-- ===============================================-->
+  <!--    Main Content-->
+  <!-- ===============================================-->
+
+    <!-- modal hủy -->
+    <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+          <div class="modal-content position-relative">
+            
+            <div class="modal-body p-0">
+              <div class="rounded-top-lg py-3 ps-4 pe-6 border-bottom">
+                  <h4 class="mb-1" id="modalExampleDemoLabel">Hủy</h4>
+              </div>
+          </div>
+           
+            <div class="ps-4 pt-3 bg-light">
+              <span>Bạn có xác nhận hủy<span class="text-700 fs-0 bi-question"></span></span>
+            </div>
+            <div class="modal-footer border-top-0 bg-light">
+              
+              <button class="btn btn-falcon-default me-1 mb-1" type="button" data-bs-dismiss="modal">Thoát
+              </button>
+              <button  class="btn btn-danger me-1 mb-1" type="button" >Xác nhận
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  
+  <main class="main" id="top">
+    <div class="container d-flex flex-column align-items-center mt-3 " >    
+        <div class="bg-white col-7">
+            <div class="p-3"><span class="fw-bold">Tạo sự kiện</span></div>
+        </div>
+        <div class="col-7 bg-light p-3">
+            <form class="row bg-white m-2">
+                <div class="col-12">
+                    <label class="form-label" for="inputAddress2">Tên sự kiện</label>
+                    <input class="form-control" id="inputAddress2" type="text" placeholder="Nhập tên sự kiện" />
+                  </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="datepicker">Ngày bắt đầu</label>
+                    <input class="form-control datetimepicker" id="datepicker" type="text" placeholder="d/m/y" data-options='{"disableMobile":true}' />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="timepicker1">Giờ bắt đầu</label>
+                    <input class="form-control datetimepicker" id="timepicker1" type="text" placeholder="00:00" data-options='{"enableTime":true,"noCalendar":true,"dateFormat":"H:i","disableMobile":true}' />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="datepicker">Ngày kết thúc</label>
+                    <input class="form-control datetimepicker" id="datepicker" type="text" placeholder="d/m/y" data-options='{"disableMobile":true}' />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="timepicker1">Giờ kết thúc</label>
+                    <input class="form-control datetimepicker" id="timepicker1" type="text" placeholder="00:00" data-options='{"enableTime":true,"noCalendar":true,"dateFormat":"H:i","disableMobile":true}' />
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="inputAddress">Ghi chú</label>
+                  <div class="form-floating">
+                    <textarea class="form-control" id="floatingTextarea2" placeholder="Leave a comment here" style="height: 100px"></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="inputAddress">Ảnh mô tả</label>
+                    <div class="dropzone dropzone-single p-0" data-dropzone="data-dropzone" data-options='{"url":"valid/url","maxFiles":1,"dictDefaultMessage":"Choose or Drop a file here"}'>
+                        <div class="fallback">
+                          <input type="file" name="file" />
+                        </div>
+                        <div class="dz-preview dz-preview-single">
+                          <div class="dz-preview-cover dz-complete"><img class="dz-preview-img" src="../../../assets/img/generic/image-file-2.png" alt="..." data-dz-thumbnail="" /><a class="dz-remove text-danger" href="#!" data-dz-remove="data-dz-remove"><span class="fas fa-times"></span></a>
+                            <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></div>
+                            <div class="dz-errormessage m-1"><span data-dz-errormessage="data-dz-errormessage"></span></div>
+                          </div>
+                          <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></div>
+                        </div>
+                        <div class="dz-message" data-dz-message="data-dz-message">
+                          <div class="dz-message-text"><img class="me-2" src="../../../assets/img/icons/cloud-upload.svg" width="25" alt="" />Drop your file here</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-outline-secondary me-1 mb-1" type="button" data-bs-toggle="modal" data-bs-target="#modal-delete" >Hủy
+                    </button>
+                    
+                    <button class="btn btn-primary me-1 mb-1" type="button">Tạo
+                    </button>
+                </div>
+                
+              </form>
+        </div>
+    </div>
+  </main>
+  <!-- ===============================================-->
+  <!--    End of Main Content-->
+  <!-- ===============================================-->
+
+
+  <!-- ===============================================-->
+  <!--    JavaScripts-->
+  <!-- ===============================================-->
+  <script src="../vendors/dropzone/dropzone.min.js"></script>
+  <script src="../assets/js/flatpickr.js"></script>
+  <script src="../vendors/popper/popper.min.js"></script>
+  <script src="../vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="../vendors/anchorjs/anchor.min.js"></script>
+  <script src="../vendors/is/is.min.js"></script>
+  <script src="../vendors/fontawesome/all.min.js"></script>
+  <script src="../vendors/lodash/lodash.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="../vendors/list.js/list.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../vendors/dropzone/dropzone.min.js"></script>
+  
+
+</body>
+
+</html>
